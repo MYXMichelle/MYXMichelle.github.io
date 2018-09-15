@@ -252,6 +252,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/15/数据结构-第一讲基本概念（陈姥姥的第一课）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MYX_Michelle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你是我的猫">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/15/数据结构-第一讲基本概念（陈姥姥的第一课）/" itemprop="url">数据结构-第一讲&emsp;基本概念（陈姥姥的第一课）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-15T22:17:29+08:00">
+                2018-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学术人生/" itemprop="url" rel="index">
+                    <span itemprop="name">学术人生</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><font color="#848484"><em>PS:今天是新生报到第一天，和昨天相比瞬间多了超多的人，有点社交恐惧…和盆友聊天发现想当年第一次踏进这里的时候感觉学校好大啊，现在觉得就这么点，只是长了点罢了。即将成为大四的老女人了，难受。下午签完了不放弃保研的承诺书，可是我要保到哪里都不知道，群里的大佬们都在自嗨，渣渣只能默默潜水….ANYWAY,今天第一次上陈姥姥的课有点小激动~</em></font><br><br><br>●<strong>计算多项式f(x)=a0+a1x+a2x^2……+a(n)x^n时有两种方法：</strong>1）直接思路【会被专业程序员鄙视orz，因为当n很大时时间复杂度巨大】；2）改写f(x)=a0+x(a1+x(……(a(n-1)+x(a(n))))) 用递归</p>
+<p><font color="#548c00">【编程块正在修建中….】</font><br>●<font size="4"><strong>clock():</strong></font>头文件添加：*&lt;time.h&gt;<br>&ensp;1）功能：捕捉从程序开始运行到clock()被调用所耗费的时间，单位为clock tick，即“时钟打点”，返回类型为clock_t。<br>&ensp;2）CLK_TCK是一个常数，表示机器时钟每秒所走的打点数。</p>
+<p><font color="##FF0000"><strong><em>测试程序运行时间的模板</em></strong></font></p>
+<p><font color="#548c00">【编程块正在修建中….】</font><br>●<strong>抽象数据类型(Abstract Data Type)概念：</strong>重要理解“抽象”的含义<br>●<strong>不同函数的增长速度：</strong>logn&lt;n&lt;nlogn&lt;n^2&lt;n^3&lt;2^n&lt;n!（当复杂度为n^2时要考虑一下能否降到nlogn，可明显提高效率）<br><img src="/2018/09/15/数据结构-第一讲基本概念（陈姥姥的第一课）/函数增长速度.PNG" width="60%" height="60%"><br>●<strong>复杂度分析小窍门：</strong><br><img src="/2018/09/15/数据结构-第一讲基本概念（陈姥姥的第一课）/复杂度分析窍门.PNG" width="60%" height="60%"><br>【….to be continue….】</p>
+<p><font color="#548c00">【代码块添加测试】</font><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">fun2</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> ans=<span class="number">1.0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		ans+=(<span class="built_in">pow</span>(x,i)/i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/计网-第二章 物理层 小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -345,7 +491,7 @@
       
         
           
-            <p>●物理层的主要任务是确定与传输媒体的接口有关的一些特性：机械特性、电气特性、功能特性和过程特性。<br>●数据通信系统可划分为三大部分：源系统、传输系统和目的系统。源系统包括源点（or源站、信源）和发送器，目的系统包括接收器和终点（or目的站、新宿）<br>●信号可分模拟信号和数字信号。由数字信号组成的基本波形称为码元<br>●根据信息交互方式，通信可分为：单向通信（or单工通信）、双向交替通信（or半双工通信）和双向同时通信（or全双工通信）。<br>●来自信源的信号叫基带信号。信号要在信道上传输就要经过调制。调制有基带调制和带通调制（调幅、调频、调相与正交振幅调制）。<br>●【写不动了….to&ensp;be&ensp;continue….】</p>
+            <p>●物理层的主要任务是确定与传输媒体的接口有关的一些特性：机械特性、电气特性、功能特性和过程特性；功能是提供透明的比特流传输（只关注怎么传，不关注传什么）<br>●数据通信系统可划分为三大部分：源系统、传输系统和目的系统。源系统包括源点（or源站、信源）和发送器，目的系统包括接收器和终点（or目的站、新宿）<br>●信号可分模拟信号和数字信号。由数字信号组成的基本波形称为码元。<br>●根据信息交互方式，通信可分为：单向通信（or单工通信）、双向交替通信（or半双工通信）和双向同时通信（or全双工通信）。<br>●来自信源的信号叫基带信号。信号要在信道上传输就要经过调制。调制有基带调制和带通调制（调幅、调频、调相与正交振幅调制（星座模型））。<br>●数字带宽(C)和物理带宽(B)的关系<br>&emsp;1)奈奎斯特定理：【无噪声（理想）信道】最大传输速率（数字带宽）C=2Blog2&ensp;V（bps）&ensp;&ensp;(B为物理带宽，V为离散信号等级)<br>&emsp;2)香浓定理：【噪声信道】最大传输速率（数字带宽）C=Blog2&ensp;(1+S/N)(bps)&ensp;&ensp;(B为物理带宽，S/N为噪声(dB)：分贝值=10lg(S/N))<br>●信道复用技术：频分复用（FDM）、时分复用（TDM）、统计时分复用（STDM）、码分复用（CDM，CDMA码分多址更常用）和波分复用（WDM,光的频分复用）。<br>&emsp;<font color="#FF0000"><em>tips：</em></font>假设有一群人在party上畅谈，FDM是不同的人用不同的语调同时交谈；TDM是不同的人按顺序交谈；STDM是把所有要说的话集中起来再按顺序说出来；CDMA是每对交谈者用不同的语言交流<br>●CDMA原理（码片（唯一、正交）、内积）</p>
 
           
         
@@ -486,7 +632,7 @@
 
       
         
-          <p>●计算机网络和互连网（网络的网络）<br>●Internet和internet的区别<br>●互联网采用存储转发的分组交换技术，以及三层ISP结构（主体、地区、本地）<br>●互联网按工作方式可划分为边缘部分和核心部分。主机在边缘部分，作用为信息处理；路由器在核心部分，作用为按存储转发方式进行分组交换。<br>●计算机之间的通信方式：客户-服务器方式和对等方式（P2P）。<br>●按作用范围的不同，计算机网络可分为：PAN\LAN\MAN\WAN(从小到大).<br>●计算机网络的性能指标：<br>
+          <p>●计算机网络和互连网（网络的网络）<br>●Internet和internet的区别<br>●互联网采用存储转发的分组交换技术，以及三层ISP结构（主体、地区、本地）<br>●互联网按工作方式可划分为边缘部分和核心部分。主机在边缘部分，作用为信息处理；路由器在核心部分，作用为按存储转发方式进行分组交换。<br>●计算机之间的通信方式：客户-服务器方式和对等方式（P2P）。<br>●按作用范围的不同，计算机网络可分为：PAN\LAN\MAN\WAN(从小到大).<br>●计算机网络的性能指标：<br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/14/计网-第一章 概述 小结/#more" rel="contents">
@@ -861,7 +1007,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -883,7 +1029,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

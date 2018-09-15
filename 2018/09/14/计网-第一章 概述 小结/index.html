@@ -87,13 +87,14 @@
 <meta property="og:site_name" content="你是我的猫">
 <meta property="og:description" content="●计算机网络和互连网（网络的网络）●Internet和internet的区别●互联网采用存储转发的分组交换技术，以及三层ISP结构（主体、地区、本地）●互联网按工作方式可划分为边缘部分和核心部分。主机在边缘部分，作用为信息处理；路由器在核心部分，作用为按存储转发方式进行分组交换。●计算机之间的通信方式：客户-服务器方式和对等方式（P2P）。●按作用范围的不同，计算机网络可分为：PAN\LAN\MA">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/09/14/计网-第一章%20概述%20小结/images/计网-第一章小结/2.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/09/14/计网-第一章%20概述%20小结/images/计网-第一章小结/1.jpg">
-<meta property="og:updated_time" content="2018-09-15T02:47:01.662Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/14/计网-第一章%20概述%20小结/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/14/计网-第一章%20概述%20小结/3.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/09/14/计网-第一章%20概述%20小结/1.jpg">
+<meta property="og:updated_time" content="2018-09-15T15:19:07.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计网-第一章 概述 小结">
 <meta name="twitter:description" content="●计算机网络和互连网（网络的网络）●Internet和internet的区别●互联网采用存储转发的分组交换技术，以及三层ISP结构（主体、地区、本地）●互联网按工作方式可划分为边缘部分和核心部分。主机在边缘部分，作用为信息处理；路由器在核心部分，作用为按存储转发方式进行分组交换。●计算机之间的通信方式：客户-服务器方式和对等方式（P2P）。●按作用范围的不同，计算机网络可分为：PAN\LAN\MA">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/14/计网-第一章%20概述%20小结/images/计网-第一章小结/2.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/14/计网-第一章%20概述%20小结/2.jpg">
 
 
 
@@ -345,7 +346,7 @@
       
 
       
-        <p>●计算机网络和互连网（网络的网络）<br>●Internet和internet的区别<br>●互联网采用存储转发的分组交换技术，以及三层ISP结构（主体、地区、本地）<br>●互联网按工作方式可划分为边缘部分和核心部分。主机在边缘部分，作用为信息处理；路由器在核心部分，作用为按存储转发方式进行分组交换。<br>●计算机之间的通信方式：客户-服务器方式和对等方式（P2P）。<br>●按作用范围的不同，计算机网络可分为：PAN\LAN\MAN\WAN(从小到大).<br>●计算机网络的性能指标：<br><a id="more"></a><br>1.速率：数据的传送速率，也称数据率（data&ensp;rate）或比特率（bit&ensp;rate）。单位有：□bit/s（其中“□”可取的值有：K\M\G\T\P\E\Z\Y……\B）.【哈哈哈有个盆友叫XB】<br>2.带宽：有两种意思<br>&emsp;&emsp;1）信号带宽：也称通频带，表示某信道允许通过的信号频带范围。单位是Hz。<br>&emsp;&emsp;2）网络带宽：计网中的带宽用来表示网络中某通道传送数据的能力，故网络带宽表示单位时间内网络中某信道所能通过的“最高数据率”。【计网中通常指这个意思】。单位是bit/s。<br>3.吞吐量：表示在单位时间内通过某个网络（或信道、接口）的实际的数据量。<br>4.时延：总时延 = 传输时延 + 传播时延 + 处理时延 + 排队时延<br>&emsp;&emsp;1） 传输时延<br>&emsp;&emsp;主机或路由器传输数据帧所需要的时间。<br>&emsp;&emsp;2） 传播时延<br>&emsp;&emsp;电磁波在信道中传播所需要花费的时间，电磁波传播的速度接近光速。<br>&emsp;&emsp;3） 处理时延<br>&emsp;&emsp;主机或路由器收到分组时进行处理所需要的时间，例如分析首部、从分组中提取数据、进行差错检验或查找适当的路由等。<br>&emsp;&emsp;4） 排队时延<br>&emsp;&emsp;分组在路由器的输入队列和输出队列中排队等待的时间，取决于网络当前的通信量。<br>5.时延带宽积：时延带宽积=传播时延*带宽（链路中的比特数表示从发送端发出的但尚未到达接受端的比特）<br>6.往返时间RTT：发送时间=数据长度/发送速率；有效数据率=数据长度/（发送时间+RTT）<br>7.利用率：<br>&emsp;&emsp;1）信道利用率：指某信道有多少比例的时间是被利用的（有数据通过）。<br>&emsp;&emsp;2）网络利用率：全网络的信道利用率的加权平均值。<br>●计算机网络体系结构指各层及其协议的集合<br><img src="images/计网-第一章小结/2.jpg"><br>●<font color="#FF0000">【重要】</font>参考模型：<br>&emsp;&emsp;1）OSI/RM（开放系统互连基本参考模型）：应用层、表示层、会话层、运输层、网络层、数据链路层、物理层（从上到下，从7到1）<br>&emsp;&emsp;2）TCP/IP：应用层、运输层、网络层、网络接口层<br>●五层协议的体系结构为应用层、运输层、网络层、数据链路层、物理层。运输层最重要的协议是TCP（数据单位为报文段）和UDP（数据单位为用户数据报）<br>●<font color="#FF0000">【重要】</font>数据在各层之间的传递过程：<br><img src="images/计网-第一章小结/1.jpg"><br>●相邻两层之间的关系:</p>
+        <p>●计算机网络和互连网（网络的网络）<br>●Internet和internet的区别<br>●互联网采用存储转发的分组交换技术，以及三层ISP结构（主体、地区、本地）<br>●互联网按工作方式可划分为边缘部分和核心部分。主机在边缘部分，作用为信息处理；路由器在核心部分，作用为按存储转发方式进行分组交换。<br>●计算机之间的通信方式：客户-服务器方式和对等方式（P2P）。<br>●按作用范围的不同，计算机网络可分为：PAN\LAN\MAN\WAN(从小到大).<br>●计算机网络的性能指标：<br><a id="more"></a><br>1.速率：数据的传送速率，也称数据率（data&ensp;rate）或比特率（bit&ensp;rate）。单位有：□bit/s（其中“□”可取的值有：K\M\G\T\P\E\Z\Y……\B）.要和KB\GB\……\XB等区别开。【哈哈哈有个盆友叫XB】<br>2.带宽：有两种意思<br>&emsp;1）信号带宽：也称通频带，表示某信道允许通过的信号频带范围。单位是Hz。<br>&emsp;2）网络带宽：计网中的带宽用来表示网络中某通道传送数据的能力，故网络带宽表示单位时间内网络中某信道所能通过的“最高数据率”。【计网中通常指这个意思】。单位是bit/s。<br>3.吞吐量：表示在单位时间内通过某个网络（或信道、接口）的实际的数据量。<br>4.时延：总时延 = 传输时延 + 传播时延 + 处理时延 + 排队时延<br>&emsp;1） 传输时延<br>&emsp;主机或路由器传输数据帧所需要的时间。<br>&emsp;2） 传播时延<br>&emsp;电磁波在信道中传播所需要花费的时间，电磁波传播的速度接近光速。<br>&emsp;3） 处理时延<br>&emsp;主机或路由器收到分组时进行处理所需要的时间，例如分析首部、从分组中提取数据、进行差错检验或查找适当的路由等。<br>&emsp;4） 排队时延<br>&emsp;分组在路由器的输入队列和输出队列中排队等待的时间，取决于网络当前的通信量。<br>5.时延带宽积：时延带宽积=传播时延*带宽（链路中的比特数表示从发送端发出的但尚未到达接受端的比特）<br>6.往返时间RTT：发送时间=数据长度/发送速率；有效数据率=数据长度/（发送时间+RTT）<br>7.利用率：<br>&emsp;1）信道利用率：指某信道有多少比例的时间是被利用的（有数据通过）。<br>&emsp;2）网络利用率：全网络的信道利用率的加权平均值。<br>●计算机网络体系结构指各层及其协议的集合<br><img src="/2018/09/14/计网-第一章 概述 小结/2.jpg"><br>●<font color="#FF0000">【重要】</font>参考模型：<br>&emsp;1)OSI/RM（开放系统互连基本参考模型）：应用层、表示层、会话层、运输层、网络层、数据链路层、物理层（从上到下，从7到1）<br>&emsp;2)TCP/IP：应用层、运输层、网络层、网络接口层<br><img src="/2018/09/14/计网-第一章 概述 小结/3.PNG"><br>●五层协议的体系结构为应用层、运输层、网络层、数据链路层、物理层。运输层最重要的协议是TCP（数据单位为报文段）和UDP（数据单位为用户数据报）<br>●<font color="#FF0000">【重要】</font>数据在各层之间的传递过程：<br><img src="/2018/09/14/计网-第一章 概述 小结/1.jpg"></p>
 
       
     </div>
@@ -460,7 +461,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -482,7 +483,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

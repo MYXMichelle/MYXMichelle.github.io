@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="计网," />
 
 
 
@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="一个不自量力的蹩脚小白 人们之所以不愿改变，是因为害怕未知。但历史唯一不变的事实，就是一切都会改变。——《未来简史》 Remember to look up at the stars and not down at your feet. Be curious and however difficult life may seem, there is always something you ca">
-<meta property="og:type" content="website">
-<meta property="og:title" content="你是我的猫">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="数据链路层的三个基本问题：1)封装成帧:数据链路层将网络层中的IP数据报（或称数据报、分组、包）添加首部和尾部，而成为帧(framing)。首部符号为SOH（编码为0x01），尾部符号为EOT（0x04）2)透明传输:帧的数据部分出现了首部和尾部的编码，会导致错误。解决方法为“字节填充”，在帧的数据部分中出现和首部或尾部相同的编码前插入一个转义字符（符号为ESC，编码为1BH），若转义字符ESC">
+<meta name="keywords" content="计网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计网-第三章&amp;emsp;数据链路层&amp;emsp;小结">
+<meta property="og:url" content="http://yoursite.com/2018/09/17/计网-第三章-数据链路层-小结/index.html">
 <meta property="og:site_name" content="你是我的猫">
-<meta property="og:description" content="一个不自量力的蹩脚小白 人们之所以不愿改变，是因为害怕未知。但历史唯一不变的事实，就是一切都会改变。——《未来简史》 Remember to look up at the stars and not down at your feet. Be curious and however difficult life may seem, there is always something you ca">
+<meta property="og:description" content="数据链路层的三个基本问题：1)封装成帧:数据链路层将网络层中的IP数据报（或称数据报、分组、包）添加首部和尾部，而成为帧(framing)。首部符号为SOH（编码为0x01），尾部符号为EOT（0x04）2)透明传输:帧的数据部分出现了首部和尾部的编码，会导致错误。解决方法为“字节填充”，在帧的数据部分中出现和首部或尾部相同的编码前插入一个转义字符（符号为ESC，编码为1BH），若转义字符ESC">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-16T16:18:07.844Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/17/计网-第三章-数据链路层-小结/用户到ISP的链路使用PPP协议.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/17/计网-第三章-数据链路层-小结/PPP帧格式.jpg">
+<meta property="og:updated_time" content="2018-09-18T09:42:32.879Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="你是我的猫">
-<meta name="twitter:description" content="一个不自量力的蹩脚小白 人们之所以不愿改变，是因为害怕未知。但历史唯一不变的事实，就是一切都会改变。——《未来简史》 Remember to look up at the stars and not down at your feet. Be curious and however difficult life may seem, there is always something you ca">
+<meta name="twitter:title" content="计网-第三章&amp;emsp;数据链路层&amp;emsp;小结">
+<meta name="twitter:description" content="数据链路层的三个基本问题：1)封装成帧:数据链路层将网络层中的IP数据报（或称数据报、分组、包）添加首部和尾部，而成为帧(framing)。首部符号为SOH（编码为0x01），尾部符号为EOT（0x04）2)透明传输:帧的数据部分出现了首部和尾部的编码，会导致错误。解决方法为“字节填充”，在帧的数据部分中出现和首部或尾部相同的编码前插入一个转义字符（符号为ESC，编码为1BH），若转义字符ESC">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/17/计网-第三章-数据链路层-小结/用户到ISP的链路使用PPP协议.jpg">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/17/计网-第三章-数据链路层-小结/"/>
 
 
 
 
 
-  <title> | 你是我的猫</title>
+  <title>计网-第三章&emsp;数据链路层&emsp;小结 | 你是我的猫</title>
   
 
 
@@ -253,39 +257,183 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/17/计网-第三章-数据链路层-小结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MYX_Michelle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你是我的猫">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <ul>
-<li><font size="4"><strong>一个不自量力的蹩脚小白</strong></font></li>
-<li><em>人们之所以不愿改变，是因为害怕未知。但历史唯一不变的事实，就是一切都会改变。——《未来简史》</em></li>
-<li><em>Remember to look up at the stars and not down at your feet. Be curious and however difficult life may seem, there is always something you can do and succeed at. - SH</em></li>
-<li><font color="#FA5858">彩蛋：</font>想放空的时候就会打开这个网站发个呆&ensp;<a href="http://findingho.me/" target="_blank" rel="noopener">http://findingho.me/</a></li>
+          <h1 class="post-title" itemprop="name headline">计网-第三章&emsp;数据链路层&emsp;小结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-17T20:48:09+08:00">
+                2018-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学术人生/" itemprop="url" rel="index">
+                    <span itemprop="name">学术人生</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><p><strong>数据链路层的三个基本问题：</strong><br>1)封装成帧:数据链路层将网络层中的IP数据报（或称数据报、分组、包）添加首部和尾部，而成为帧(framing)。首部符号为SOH（编码为0x01），尾部符号为EOT（0x04）<br>2)透明传输:帧的数据部分出现了首部和尾部的编码，会导致错误。解决方法为“字节填充”，在帧的数据部分中出现和首部或尾部相同的编码前插入一个转义字符（符号为ESC，编码为1BH），若转义字符ESC也出现在数据中，则同样在前面插入转义字符ESC；接收端会将转义字符删除<br>3)差错检测（比特差错）：循环冗余校验CRC【配电网中有学过，不赘述】<br><font color="#ff0000"><em>attention:</em></font> 这里的差错检测并不表示“可靠传输”，要做到可靠传输需要有确认和重传机制</p>
+</li>
+<li><p><strong>点对点通信：</strong><br>  链路和数据链路的概念区分：<br>  链路（物理链路）指从一个结点到相邻结点的一段物理线路（有线或无线）<br>  数据链路（逻辑链路）指物理线路+必要的通信协议（控制数据的传输）</p>
+<p>  对于通信质量良好的有线传输链路，数据链路层协议不适用确认和重传机制，改错任务交给上层协议<br>  对于通信质量较差的无线传输链路，数据链路层协议适用却和重传机制</p>
+</li>
+<li><strong>PPP协议：</strong><br><img src="/2018/09/17/计网-第三章-数据链路层-小结/用户到ISP的链路使用PPP协议.jpg" width="60%" height="60%"><br>  1.应满足的需求<br>1）简单<br>2）封装成帧<br>3）透明性<br>4）多种网络层协议<br>5）多种类型链路<br>6）差错检测<br>7）检测连接状态<br>8）最大传送单元<br>9）网络层地址协商<br>10）数据压缩协商<br>  2.组成部分：<br>1）一个将IP数据报封装到串行链路的方法<br>2）一个用来建立、配置和测试数据链路连接的链路控制协议LCP<br>3）一套网络控制协议NCP<br>  3.帧格式<br>  1)各字段意义<br><img src="/2018/09/17/计网-第三章-数据链路层-小结/PPP帧格式.jpg" width="60%" height="60%"><br>  ● F:Flag 帧的界定符号<br>  ● A和C没有实际意义（预留扩展用）<br>  ● 不同协议字段表示不同内容：<table><tr><td>字段</td><td>内容</td></tr><tr><td>0x0021</td><td>IP数据报</td></tr><tr><td>0xC021</td><td>链路控制协议LCP</td></tr><tr><td>0x8021</td><td>网络层的控制数据</td></tr></table><br>  2）字节填充<br>  异步传输时，把转移字符定义为0x7D<br>  信息字段填充规则如下：<br>  ①每出现一个0x7D字节，转变成序列(0x7D,0x5E)<br>  ②每出现一个0x7E字节，转变成序列(0x7D,0x5D)<br>  ③出现ASCII码控制字符(即小于0x20)时，在该字符前加一个0x7D</li>
+<li><strong>广播通信特点：</strong></li>
+<li><p>CSMA/CD协议：</p>
+</li>
+<li><p><strong>以太网MAC层的硬件地址</strong></p>
+</li>
+<li><strong>适配器、转发器、集线器、网桥、以太网交换机的作用即使用场合</strong></li>
 </ul>
 
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计网/" rel="tag"># 计网</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/17/数据结构-第二讲-线性结构（何钦铭）/" rel="next" title="数据结构-第二讲 线性结构（何钦铭）">
+                <i class="fa fa-chevron-left"></i> 数据结构-第二讲 线性结构（何钦铭）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/27/Wake-Me-Up-When-Spetember-Ends/" rel="prev" title="Wake Me Up When Spetember Ends">
+                Wake Me Up When Spetember Ends <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 

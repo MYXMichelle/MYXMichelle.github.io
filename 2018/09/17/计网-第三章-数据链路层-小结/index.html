@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/09/17/计网-第三章-数据链路层-小结/用户到ISP的链路使用PPP协议.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/17/计网-第三章-数据链路层-小结/PPP帧格式.jpg">
-<meta property="og:updated_time" content="2018-09-18T09:42:32.879Z">
+<meta property="og:updated_time" content="2018-10-07T12:53:40.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计网-第三章&amp;emsp;数据链路层&amp;emsp;小结">
 <meta name="twitter:description" content="数据链路层的三个基本问题：1)封装成帧:数据链路层将网络层中的IP数据报（或称数据报、分组、包）添加首部和尾部，而成为帧(framing)。首部符号为SOH（编码为0x01），尾部符号为EOT（0x04）2)透明传输:帧的数据部分出现了首部和尾部的编码，会导致错误。解决方法为“字节填充”，在帧的数据部分中出现和首部或尾部相同的编码前插入一个转义字符（符号为ESC，编码为1BH），若转义字符ESC">
@@ -362,7 +362,7 @@
 <li><p><strong>数据链路层的三个基本问题：</strong><br>1)封装成帧:数据链路层将网络层中的IP数据报（或称数据报、分组、包）添加首部和尾部，而成为帧(framing)。首部符号为SOH（编码为0x01），尾部符号为EOT（0x04）<br>2)透明传输:帧的数据部分出现了首部和尾部的编码，会导致错误。解决方法为“字节填充”，在帧的数据部分中出现和首部或尾部相同的编码前插入一个转义字符（符号为ESC，编码为1BH），若转义字符ESC也出现在数据中，则同样在前面插入转义字符ESC；接收端会将转义字符删除<br>3)差错检测（比特差错）：循环冗余校验CRC【配电网中有学过，不赘述】<br><font color="#ff0000"><em>attention:</em></font> 这里的差错检测并不表示“可靠传输”，要做到可靠传输需要有确认和重传机制</p>
 </li>
 <li><p><strong>点对点通信：</strong><br>  链路和数据链路的概念区分：<br>  链路（物理链路）指从一个结点到相邻结点的一段物理线路（有线或无线）<br>  数据链路（逻辑链路）指物理线路+必要的通信协议（控制数据的传输）</p>
-<p>  对于通信质量良好的有线传输链路，数据链路层协议不适用确认和重传机制，改错任务交给上层协议<br>  对于通信质量较差的无线传输链路，数据链路层协议适用却和重传机制</p>
+<p>  对于通信质量良好的有线传输链路，数据链路层协议不适用确认和重传机制，改错任务交给上层协议<br>  对于通信质量较差的无线传输链路，数据链路层协议适用却和重传机制<a id="more"></a></p>
 </li>
 <li><strong>PPP协议：</strong><br><img src="/2018/09/17/计网-第三章-数据链路层-小结/用户到ISP的链路使用PPP协议.jpg" width="60%" height="60%"><br>  1.应满足的需求<br>1）简单<br>2）封装成帧<br>3）透明性<br>4）多种网络层协议<br>5）多种类型链路<br>6）差错检测<br>7）检测连接状态<br>8）最大传送单元<br>9）网络层地址协商<br>10）数据压缩协商<br>  2.组成部分：<br>1）一个将IP数据报封装到串行链路的方法<br>2）一个用来建立、配置和测试数据链路连接的链路控制协议LCP<br>3）一套网络控制协议NCP<br>  3.帧格式<br>  1)各字段意义<br><img src="/2018/09/17/计网-第三章-数据链路层-小结/PPP帧格式.jpg" width="60%" height="60%"><br>  ● F:Flag 帧的界定符号<br>  ● A和C没有实际意义（预留扩展用）<br>  ● 不同协议字段表示不同内容：<table><tr><td>字段</td><td>内容</td></tr><tr><td>0x0021</td><td>IP数据报</td></tr><tr><td>0xC021</td><td>链路控制协议LCP</td></tr><tr><td>0x8021</td><td>网络层的控制数据</td></tr></table><br>  2）字节填充<br>  异步传输时，把转移字符定义为0x7D<br>  信息字段填充规则如下：<br>  ①每出现一个0x7D字节，转变成序列(0x7D,0x5E)<br>  ②每出现一个0x7E字节，转变成序列(0x7D,0x5D)<br>  ③出现ASCII码控制字符(即小于0x20)时，在该字符前加一个0x7D</li>
 <li><strong>广播通信特点：</strong></li>
@@ -486,7 +486,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -497,7 +497,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

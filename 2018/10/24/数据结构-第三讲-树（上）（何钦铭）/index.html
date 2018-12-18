@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)9.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)10.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)11.PNG">
-<meta property="og:updated_time" content="2018-10-30T15:49:40.885Z">
+<meta property="og:updated_time" content="2018-10-31T08:54:04.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-第三讲 树（上）（何钦铭）">
 <meta name="twitter:description" content="树与树的表示查找：静态查找：集合中记录是固定的（如字典）动态查找：集合中记录数动态变化的（如图书馆书架中的书） 静态查找方法：1.顺序查找（时间复杂度为O(N)，“哨兵”概念）2.二分查找（连续存放的有序数组，时间复杂度为O(logN)） 二分查找判定树：左子树的结点都比根结点小，右子树的结点都比根结点大1.每个结点需要的查找次数刚好为该结点所在的层数2.查找成功时查找次数不会超过判定树的深度3.">
@@ -162,7 +162,7 @@
     <div class="headband"></div>
     <a href="https://github.com/MYXMichelle">
     <!--github-start-->
-    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <a href="https://github.com/MYXMichelle"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <!--github-start-->
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -380,6 +380,7 @@
 <p>二叉树的存储结构：<br>1.顺序存储结构：<br>对于<strong>完全二叉树</strong>比较完美：按从上至下、从左到右顺序存储n个结点的完全二叉树的结点父子关系：<br>①非根结点（i&gt;1）的父结点序号是[i/2]（取整）<br>②结点（i）的左孩子的序号是2i（若2i&lt;=n，否则没有左孩子），右孩子的序号是2i+1（若2i+1&lt;=n，否则没有左孩子）<br>对于<strong>一般的二叉树</strong>，可将其填充为完全二叉树（没有的结点对应的数组元素为空），但会造成空间的浪费<br>2.链表存储：<br><img src="/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)5.PNG" width="70%" height="70%"></p>
 <p>二叉树的遍历：<br>【递归遍历】先序、中序、后序<br>【先序、中序和后序遍历过程】遍历过程中经过结点的路线一样，只是访问各结点的时机不同。（每个结点都会经过三次）<br>【中序的非递归遍历】堆栈<br><img src="/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)6.PNG" width="70%" height="70%"><br>【先序的非递归遍历】<strong>【DFS?】</strong><br><img src="/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)7.PNG" width="70%" height="70%"><br>【后序的非递归遍历】（来自网友“pc不是pc”）<br><img src="/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)8.PNG" width="70%" height="70%"><br>(可以去掉T=Null这一步)<br>【层序遍历】<br>二叉树遍历的核心问题：<strong>二维结构的线性化</strong><br><strong>队列</strong>实现：遍历从根结点开始，首先将根结点入队，然后开始执行循环：结点出队、访问该结点、其左右儿子入队</p>
 <p><font color="FF0000">如何实现先序、中序、后序的非递归遍历？</font><br>【遍历二叉树的应用】<br>1.输出二叉树中的叶子结点：先序遍历框架<br><img src="/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)9.PNG" width="70%" height="70%"><br>2.求二叉树的高度：后序遍历框架<br><img src="/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)10.PNG" width="70%" height="70%"><br>3.二元运算表达式树及其遍历：<br>①先序遍历（前缀表达式）<br>②中序遍历（中缀表达式 <font color="FF0000">！不准确，会受到运算符优先级的影响</font>）可运用加左右括号解决问题<br>③后序遍历（后缀表达式）<br><img src="/2018/10/24/数据结构-第三讲-树（上）（何钦铭）/S(S)11.PNG" width="70%" height="70%"><br>4.已知三种遍历的任意两种遍历序列，能唯一确定一颗二叉树，当且仅当这两种的其中一种为<strong>中序遍历序列</strong></p>
+<p><strong>树的同构</strong><br>概念：给定两棵树T1和T2，如果T1可以通过若干次左右孩子互换就变成T2，则称这两棵树是同构的。<br>【判别两棵树是否同构】<br>静态链表存储二叉树：以链表的思想，存储结构为二维数组</p>
 
       
     </div>
@@ -421,6 +422,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/31/法律之光/" rel="prev" title="法律之光">
+                法律之光 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -492,7 +497,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

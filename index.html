@@ -265,6 +265,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/关于myeclipse无法启动的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MYX_Michelle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你是我的猫">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/14/关于myeclipse无法启动的问题/" itemprop="url">关于myeclipse无法启动的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-14T16:21:55+08:00">
+                2019-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/medicine-virtual/" itemprop="url" rel="index">
+                    <span itemprop="name">medicine virtual</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>版权声明：本文为CSDN博主「ZZF_Blue」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/ZZF_Blue/article/details/88527436" target="_blank" rel="noopener">https://blog.csdn.net/ZZF_Blue/article/details/88527436</a></p>
+<p>刚用me没几天，在一次新的启动软件时遇到弹出窗口内容：<br>“An errror has ocucurrred. See the log file<br>…………”<br>一开始以为是笔记本系统问题（因为自己的电脑有点旧了，还想着找个时间重装系统来着），后来经过重启软件/重启电脑（是的，一般出问题我的粗暴方法就是重启就完事了），但还是无法解决，后来根据路径找到了日志文件检查错误，内容如下：</p>
+<p>!SESSION 2019-10-12 22:29:18.059 ———————————————–<br>eclipse.buildId=15.0.1.CI-006<br>java.version=1.8.0_112<br>java.vendor=Oracle Corporation<br>BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN<br>Command-line arguments:  -os win32 -ws win32 -arch x86_64</p>
+<p>!ENTRY org.eclipse.equinox.ds 2 0 2019-10-12 22:29:50.521<br>!MESSAGE [SCR - WorkThread] Timeout occurred! Thread was blocked on processing [QueuedJob] WorkPerformer: org.eclipse.equinox.internal.ds.SCRManager@23a5c659; actionType 1</p>
+<p>!ENTRY org.eclipse.equinox.ds 2 0 2019-10-12 22:29:50.531<br>!MESSAGE [SCR] Enabling components of bundle org.eclipse.ui.trace did not complete in 30000 ms </p>
+<p>!ENTRY org.eclipse.osgi 2 0 2019-10-12 22:29:55.570<br><strong>!MESSAGE While loading class “com.genuitec.eclipse.core.AbstractGenuitecUIPlugin”, thread </strong>“Thread[Start Level: Equinox Container: 205003ad-fcec-0019-120b-c6b1482e90c3,5,main]” <strong>timed out waiting (5001ms) for thread </strong>“Thread[Component Resolve Thread,5,main]”<strong> to finish starting bundle </strong>“org.eclipse.core.runtime_3.12.0.v20160606-1342 [547]”. <strong>To avoid deadlock, thread</strong> “Thread[Start Level: Equinox Container: 205003ad-fcec-0019-120b-c6b1482e90c3,5,main]” <strong>is proceeding but “com.genuitec.eclipse.core.AbstractGenuitecUIPlugin” may not be fully initialized.</strong><br>!STACK 0<br><strong>org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type=”osgi.bundle”; </strong>version:Version=”3.12.0.v20160606-1342”; osgi.identity=”org.eclipse.core.runtime”; singleton:=”true” [id=547] STARTED<br>………………</p>
+<p>在网站上找解决方案，遇到了和CSDN博主「ZZF_Blue」文章中提到的一样的问题，才发现<strong>问题的关键</strong>所在，即在上一次关闭me时，出现了关闭异常，me中的一些模块的锁没有被释放，获取不到之前的锁，导致启动失败。故特此记录<strong>解决方法</strong>，如下：</p>
+<p>在安装目录下，找到\configuration中所有前缀是org.eclipse的文件夹，只要里面含有.manager的文件夹，就删除里面的.fileTableLock文件（注意，所有的都要删除）</p>
+<p>真的就成功了耶( •̀ ω •́ )y，感谢博主！！！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/JAVA多版本之间的配置问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -319,8 +469,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学术人生/" itemprop="url" rel="index">
-                    <span itemprop="name">学术人生</span>
+                  <a href="/categories/medicine-virtual/" itemprop="url" rel="index">
+                    <span itemprop="name">medicine virtual</span>
                   </a>
                 </span>
 
@@ -1565,152 +1715,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/Wake-Me-Up-When-Spetember-Ends/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MYX_Michelle">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你是我的猫">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/Wake-Me-Up-When-Spetember-Ends/" itemprop="url">Wake Me Up When Spetember Ends</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T17:14:50+08:00">
-                2018-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日常/" itemprop="url" rel="index">
-                    <span itemprop="name">日常</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;<font color="#848484">昨天看了老张对张艺谋导的<em>《活着》</em>这部电影的解读，片尾的时候放了<strong><em>《Wake Me Up When Spetember Ends》</em></strong>，很有感觉，于是就拿来做标题了。由于版权原因，无法放这首歌的外链，只好放个传送门了：<a href="https://music.163.com/#/song?id=18127334" target="_blank" rel="noopener">https://music.163.com/#/song?id=18127334</a> </font><br>&emsp;&emsp;今年九月经历了大起大落，真的从来没有预想到会有这么地煎熬。从去年寒假末才决定考研，到九月初被告知有了保研的名额，又参加了一个完全自虐的PAT考试，再到前段时间向各种地方申请填表格，印材料，等待消息……一切都好像来的太快了。我不知道当初是有多少纠结（大概也没有纠结很久），选择放弃准备的半年时间，而选择了保研，大概只是想走一条轻松一点的路吧！也差不多在那个时候想通，<strong>无论你选择了哪条路，总是会后悔的。</strong></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/27/Wake-Me-Up-When-Spetember-Ends/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1765,7 +1769,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1776,7 +1780,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
